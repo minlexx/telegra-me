@@ -16,9 +16,10 @@ RCC_DIR     = _rcc
 CONFIG += link_pkgconfig
 
 PKGCONFIG += sailfishapp
-PKGCONFIG += tdlibjson
 PKGCONFIG += nemonotifications-qt5
 PKGCONFIG += mlite5
+PKGCONFIG += libssl libcrypto
+PKGCONFIG += zlib
 
 INCLUDEPATH += \
     /usr/include \
@@ -75,6 +76,8 @@ DISTFILES += \
     $$PWD/dist/telegrame_im.ini \
     $$PWD/dist/telegrame_im_exists.ini \
     $$PWD/dist/telegrame_im_fg.ini
+
+LIBS += -ltdjson
 
 target.files  = $${TARGET}
 target.path   = /usr/bin

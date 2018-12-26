@@ -24,11 +24,13 @@ PkgConfigBR:
   - Qt5Quick
   - Qt5Multimedia
   - openssl
-  - tdlibjson
+  - nemonotifications-qt5
+  - mlite5
 
 Requires:
   - sailfishsilica-qt5 >= 0.10.9
-  - tdlibjson >= 1.2
+  - tdlib-devel >= 1.3
+  - tdlib-json >= 1.3
 
 Files:
   - '%{_bindir}'
