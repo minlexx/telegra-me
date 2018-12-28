@@ -13,7 +13,11 @@ QtTdLibJsonWrapper::QtTdLibJsonWrapper (QObject * parent)
     : QThread              { parent }
     , m_tdJsonClientHandle { td_json_client_create () }
 {
+#ifdef QT_DEBUG
+    td_set_log_verbosity_level (5); // verbose logging in debug builds
+#else
     td_set_log_verbosity_level (1);
+#endif
 }
 
 QtTdLibJsonWrapper::~QtTdLibJsonWrapper (void) {
