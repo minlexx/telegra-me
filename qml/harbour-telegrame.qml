@@ -33,7 +33,8 @@ ApplicationWindow {
 
     property TD_Sticker currentSticker : null;
     property TD_StickerSet currentStickerSet : {
-        var ret = TD_Global.stickerSetsList.getFirst ();
+        var ret = null;
+        // var ret = TD_Global.stickerSetsList.getFirst (); // asserts if list is empty
         if (TD_Global.stickerSetsList.count > 0 && Helpers.lastUsedStickersetName !== "") {
             for (var idx = 0; idx < TD_Global.stickerSetsList.count; ++idx) {
                 var tmp = TD_Global.stickerSetsList.get (idx);
